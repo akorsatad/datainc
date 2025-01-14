@@ -1,7 +1,7 @@
 # Marketing Entity Data Model 
 This **data model** is specifically designed to store marketing entity labels at scale. The objective of this structure is to enable marketing organization to operate on 100,000+ entity lables (segments) where entity could be defined as any unit of marketing targeting (**entity examples**: household address, zipcode, email address, cookie ID, mobile ID, etc).
 
-# Tables:
+# Main Tables:
 
 ## Segment_Current_State
 - **Table description**: Reflects most recent state of entity, where labels can update historically (**example**: customer preference, age), otherwise (**example**: customer gender, product entry) reflects first entry point into the system.
@@ -40,3 +40,25 @@ This **data model** is specifically designed to store marketing entity labels at
 | Entity_Source  | varchar   | Source of entity data | CRM |
 | Resolution_Value | Decimal  | 1 for deterministic, <1 for probabilistic  | 97% |
 | Master_Type  | varchar  | customer | household_ID |
+
+## Master_ID_Type
+- **Table description**: Dim table that describes Master_ID types including origination and current mapping
+
+| Field    | Field Type | Description | Example |
+| -------- | ------- |------- |------- |
+| Master_Type  | varchar  | customer | household_ID |
+| Type_Description | varchar    | describes master ID logic | Household based on mailing address  |
+| Type_Marketing_Channels_Avails  | JSON  | All channels mapped to the master_ID resolution in datainc environment| Meta:  |
+| Type_Source_Avails | JSON  | All sources of data mapped to the master_ID resolution in datainc environment | Geo:|
+
+## Entity_Type
+- **Table description**: Dim table that describes Entity_ID types including origination and current mapping
+
+| Field    | Field Type | Description | Example |
+| -------- | ------- |------- |------- |
+| Entity_Type  | varchar  | customer | email |
+| Type_Description | varchar    | current customer email | customer is based on inidividuals with at least one transaction in last 12 months   |
+| Type_Marketing_Channels_Avails  | JSON  | All channels mapped to the entity_ID resolution in datainc environment| Meta:  |
+| Type_Source_Avails | JSON  | All sources of data mapped to the entity_ID resolution in datainc environment | Geo:|
+
+# Utility Tables:
