@@ -1,6 +1,6 @@
 # Datainc
 
-**Datainc** is an open-source, end-to-end data pipeline solution that harvests **alternative data sources** for marketing, advertising, and analytics use cases. Our goal is to empower brands, agencies, and analysts with non-traditional datasets (social media, call transcripts, geospatial insights, video transcripts, etc.) mapped to a robust marketing data model.
+**Datainc** is an open-source, AI ready by design, end-to-end data pipeline solution that harvests **alternative data sources** for marketing, advertising, and analytics use cases. Our goal is to empower brands, agencies, and analysts with non-traditional datasets (social media, call transcripts, geospatial insights, video transcripts, etc.) mapped to a robust marketing data model.
 
 ## Key Features
 - **Modular Connectors**: Plug-and-play ingestion from Twitter, YouTube, Yelp, Twilio, maps, and more.
